@@ -5,6 +5,7 @@
 # url: https://github.com/fantasticfears/qq_connect
 
 # inline gem omniauth-qq
+# inline gem ruby-pinyin
 require 'omniauth/strategies/oauth2'
 
 class OmniAuth::Strategies::QQConnect < OmniAuth::Strategies::OAuth2
@@ -76,7 +77,7 @@ class QQAuthenticator < ::Auth::Authenticator
     data = auth_token[:info]
     raw_info = auth_token[:extra][:raw_info]
     name = data['nickname']
-    username = data['name']
+    username = PinYin.permlink(data['name'], '_')
     qq_uid = auth_token[:uid]
 
     current_info = ::PluginStore.get('qq', "qq_uid_#{qq_uid}")
