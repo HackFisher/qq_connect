@@ -7,6 +7,7 @@
 # inline gem omniauth-qq
 # inline gem ruby-pinyin
 require 'omniauth/strategies/oauth2'
+require 'ruby-pinyin'
 
 class OmniAuth::Strategies::QQConnect < OmniAuth::Strategies::OAuth2
   option :name, "qq_connect"
