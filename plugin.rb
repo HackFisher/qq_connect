@@ -5,7 +5,8 @@
 # url: https://github.com/fantasticfears/qq_connect
 
 # inline gem omniauth-qq
-# inline gem ruby-pinyin
+gem ruby-pinyin
+
 require 'omniauth/strategies/oauth2'
 require 'ruby-pinyin'
 
